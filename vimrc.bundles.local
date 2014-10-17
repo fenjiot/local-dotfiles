@@ -1,0 +1,5 @@
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/vim-emoji'
+Plugin 'rking/ag.vim'

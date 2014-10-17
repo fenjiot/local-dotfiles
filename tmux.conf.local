@@ -1,0 +1,15 @@
+# more intuitive keybindings for splitting
+bind \ split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+# Reload tmux.conf with prefix-r
+bind C-r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+
+bind c new-window -c "#{pane_current_path}"
+
+# Simplify status bar display. Uses Goles/Battery script
+set -g status-left '[#S]'
+set -g status-right "%I:%M %p "
+
+# Make C-j display a selectable list of sessions
+bind C-j choose-tree
