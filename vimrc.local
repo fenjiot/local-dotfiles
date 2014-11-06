@@ -25,3 +25,18 @@ let g:lightline = {
       \ }
 
 nnoremap <leader>a :Ag!<space>
+
+" Toggle zoom of current split
+function! s:ToggleZoomSplit()
+  if exists('g:split_maximized')
+    unlet g:split_maximized
+    wincmd =
+  else
+    " Expand vertically and horizaontally
+    wincmd _
+    wincmd |
+    let g:split_maximized = 1
+  endif
+endfunction
+command! ToggleZoomSplit call <sid>ToggleZoomSplit()
+nnoremap <Leader>- :ToggleZoomSplit<cr>

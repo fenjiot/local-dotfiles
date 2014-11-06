@@ -1,3 +1,6 @@
 [user]
 	name = fenjiot
 	email = fenjiot@gmail.com
+
+[alias]
+  slap = "log --oneline --decorate --all --graph"

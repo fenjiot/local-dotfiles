@@ -13,3 +13,30 @@ set -g status-right "%I:%M %p "
 
 # Make C-j display a selectable list of sessions
 bind C-j choose-tree
+
+# # bind resizing of panes to H,J,K,L (resizes by steps of 10 lines/columns)
+# # # # Note, bindings are repeatable (within the default 500ms time limit) so
+# # that
+# # # # you don't have to keep entering the prefix. (Prefix-H-H-H resizes by 15)
+# bind -n S-Left resize-pane -L 2
+# bind -n S-Right resize-pane -R 2
+# bind -n S-Down resize-pane -D 1
+# bind -n S-Up resize-pane -U 1
+# unbind -n C-Left
+# unbind -n C-Down
+# unbind -n C-Up
+# unbind -n C-Right
+# bind -n C-Left resize-pane -L 10
+# bind -n C-Right resize-pane -R 10
+# bind -n C-Down resize-pane -D 5
+# bind -n C-Up resize-pane -U 5
+
+# resize splits using arrow keys
+unbind Right
+bind Right resize-pane -R 8
+unbind Left
+bind Left resize-pane -L 8
+unbind Up
+bind Up resize-pane -U 4
+unbind Down
+bind Down resize-pane -D 4
