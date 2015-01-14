@@ -40,3 +40,7 @@ unbind Up
 bind Up resize-pane -U 4
 unbind Down
 bind Down resize-pane -D 4
+
+# reset leader "ctrl-a" to "ctrl-s"
+unbind C-a
+set -g prefix C-s

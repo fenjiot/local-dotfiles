@@ -40,3 +40,5 @@ function! s:ToggleZoomSplit()
 endfunction
 command! ToggleZoomSplit call <sid>ToggleZoomSplit()
 nnoremap <Leader>- :ToggleZoomSplit<cr>
+
+set clipboard=unnamed
