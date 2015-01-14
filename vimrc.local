@@ -1,7 +1,7 @@
 colorscheme jellybeans
 " colorscheme solarized
 
-" For the hybrid line numbers on the left
+" For hybrid line numbers on the left
 set relativenumber
 set number
 
@@ -41,4 +41,5 @@ endfunction
 command! ToggleZoomSplit call <sid>ToggleZoomSplit()
 nnoremap <Leader>- :ToggleZoomSplit<cr>
 
+" Copy paste from global clipboard
 set clipboard=unnamed
