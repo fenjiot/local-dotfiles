@@ -3,6 +3,9 @@ eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
+### Above source was causing the following error:
+### /Users/frankwu/.zshrc.local:source:6: no such file or directory: /usr/local/Cellar/nvm/0.25.1/nvm.sh 
 
 alias be="bundle exec"
+eval "$(rbenv init - zsh --no-rehash)"

@@ -41,5 +41,12 @@ endfunction
 command! ToggleZoomSplit call <sid>ToggleZoomSplit()
 nnoremap <Leader>- :ToggleZoomSplit<cr>
 
-" Copy paste from global clipboard
-set clipboard=unnamed
+"" Copy paste from global clipboard
+" set clipboard=unnamed
+
+"" highlight characters overflowing over colorcolumn
+" highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
+
+" customize colorcolumn bacground color
+highlight colorcolumn ctermbg=darkred ctermfg=cyan
