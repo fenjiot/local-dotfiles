@@ -50,3 +50,6 @@ nnoremap <Leader>- :ToggleZoomSplit<cr>
 
 " customize colorcolumn bacground color
 highlight colorcolumn ctermbg=darkred ctermfg=cyan
+
+" Make Explorer better
+let g:netrw_liststyle=3
