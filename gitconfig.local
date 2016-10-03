@@ -4,6 +4,7 @@
 
 [alias]
   slap = "log --oneline --decorate --all --graph"
+  slapem = "log --oneline --decorate --all --graph --no-merges"
 
 [format]
   # git log uses --pretty format by default, so this changes the default
