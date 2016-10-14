@@ -7,4 +7,7 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 
 alias be="bundle exec"
 
+### fix annoying note about including `rbenv init -` in zsh config
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+ssh-add -A

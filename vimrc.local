@@ -1,12 +1,14 @@
+""" default to jellybeans colorscheme
 colorscheme jellybeans
 
-" For hybrid line numbers on the left
+""" For hybrid line numbers on the left
 set relativenumber
 set number
 
+""" set highlight all matching when doing search
 set hlsearch
 
-" For the emojis in the bottom bar
+""" For the emojis in the bottom bar
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -23,15 +25,16 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())' },
       \ }
 
+""" Remap space+a to activate silver_searcher
 nnoremap <leader>a :Ag!<space>
 
-" Toggle zoom of current split
+""" Toggle zoom of current split " from christoomey
 function! s:ToggleZoomSplit()
   if exists('g:split_maximized')
     unlet g:split_maximized
     wincmd =
   else
-    " Expand vertically and horizaontally
+    "" Expand vertically and horizaontally
     wincmd _
     wincmd |
     let g:split_maximized = 1
@@ -40,21 +43,14 @@ endfunction
 command! ToggleZoomSplit call <sid>ToggleZoomSplit()
 nnoremap <Leader>- :ToggleZoomSplit<cr>
 
-"" Copy paste from global clipboard
-" set clipboard=unnamed
-
-"" highlight characters overflowing over colorcolumn
-" highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
-" match OverLength /\%81v.\+/
-
-" customize colorcolumn bacground color
+""" customize colorcolumn background color
 highlight colorcolumn ctermbg=darkred ctermfg=cyan
 
-" Make Explorer better
+"" Make Explorer better more like nerd tree
 let g:netrw_liststyle=3
 
-" use mustache/vim-mustache-handlebars
+""" Use mustache/vim-mustache-handlebars
 let g:mustache_abbreviations=1
 
-" use handlebars syntastic
+""" Use handlebars syntastic
 let g:syntastic_filetype_map = {'html.handlebars': 'handlebars'}
