@@ -56,3 +56,6 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 # fix vim copy to clipboard failure tmux + vim after upgrade to macOS Sierra
 set -g default-shell $SHELL
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+
+# macOS sierra; keep track of SSH_AGENT, etc from parent environment
+set -g update-environment -r
