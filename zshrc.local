@@ -9,3 +9,27 @@ alias be="bundle exec"
 
 ### fix annoying note about including `rbenv init -` in zsh config
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export AIRFLOW_HOME="~/airflow"
+
+### lovepop cupid and vpn aliases
+alias cupid_dev='ssh -l "frank@corpaws.lovepopit.com" 54.71.191.23'
+alias vpn_cupid_dev='ssh -l "frank@corpaws.lovepopit.com" 172.31.13.90'
+
+alias cupid_stg='ssh -l "frank@corpaws.lovepopit.com" 54.201.206.22'
+alias vpn_cupid_stg='ssh -l "frank@corpaws.lovepopit.com" 172.30.1.24'
+
+alias cupid_prod='ssh -l "frank@corpaws.lovepopit.com" 34.209.80.186'
+alias vpn_cupid_prod='ssh -l "frank@corpaws.lovepopit.com" 172.29.2.166'
+
+### find connection on port
+function whatsonport() {
+  if [ "$1" != "" ]
+  then
+    sudo lsof -i:$1
+  else
+    echo "Please provide port number"
+  fi
+}
+# returns details for which process is using port, then can
+# kill -9 <PID>

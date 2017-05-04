@@ -50,7 +50,7 @@ highlight colorcolumn ctermbg=darkred ctermfg=cyan
 let g:netrw_liststyle=3
 
 """ Use mustache/vim-mustache-handlebars
-let g:mustache_abbreviations=1
+" let g:mustache_abbreviations=1
 
 """ Use handlebars syntastic
 let g:syntastic_filetype_map = {'html.handlebars': 'handlebars'}

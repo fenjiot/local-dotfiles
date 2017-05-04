@@ -14,23 +14,6 @@ set -g status-right "%I:%M %p "
 # Make C-j display a selectable list of sessions
 bind C-j choose-tree
 
-# # bind resizing of panes to H,J,K,L (resizes by steps of 10 lines/columns)
-# # # # Note, bindings are repeatable (within the default 500ms time limit) so
-# # that
-# # # # you don't have to keep entering the prefix. (Prefix-H-H-H resizes by 15)
-# bind -n S-Left resize-pane -L 2
-# bind -n S-Right resize-pane -R 2
-# bind -n S-Down resize-pane -D 1
-# bind -n S-Up resize-pane -U 1
-# unbind -n C-Left
-# unbind -n C-Down
-# unbind -n C-Up
-# unbind -n C-Right
-# bind -n C-Left resize-pane -L 10
-# bind -n C-Right resize-pane -R 10
-# bind -n C-Down resize-pane -D 5
-# bind -n C-Up resize-pane -U 5
-
 # resize splits using arrow keys
 unbind Right
 bind Right resize-pane -R 8
@@ -46,12 +29,12 @@ unbind C-a
 set -g prefix C-s
 
 # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+unbind -T copy-mode-vi 'Enter'
+bind-key -T copy-mode-vi 'Enter' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # fix vim copy to clipboard failure tmux + vim after upgrade to macOS Sierra
 set -g default-shell $SHELL
